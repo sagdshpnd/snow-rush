@@ -1,0 +1,223 @@
+[gd_scene load_steps=12 format=3 uid="uid://da4fyoowettsm"]
+
+[ext_resource type="Script" path="res://Game Assets/HUD/hud.gd" id="1_k42uo"]
+[ext_resource type="FontFile" uid="uid://pvxierg1gvcg" path="res://assets/hud_elements/upheavtt.ttf" id="2_rwws5"]
+[ext_resource type="Texture2D" uid="uid://cbu8w68vrmvop" path="res://assets/hud_elements/Heart Empty.png" id="3_h2t75"]
+[ext_resource type="Texture2D" uid="uid://c13408qtwlnhx" path="res://assets/hud_elements/Heart.png" id="4_qivfl"]
+[ext_resource type="FontFile" uid="uid://bf60dt1c31qxu" path="res://assets/hud_elements/VCRosdNEUE.ttf" id="5_e5ubj"]
+[ext_resource type="Texture2D" uid="uid://cvnfmf7l8s0re" path="res://assets/hud_elements/Boost Empty.png" id="6_wltyb"]
+[ext_resource type="Texture2D" uid="uid://peh2bdbhhc3n" path="res://assets/hud_elements/Boost_v2.png" id="7_vjub0"]
+[ext_resource type="Texture2D" uid="uid://dpq6fmbefya4j" path="res://assets/hud_elements/Start cropped Png.png" id="8_6hl6b"]
+[ext_resource type="Texture2D" uid="uid://cqmty1l8nirh3" path="res://assets/hud_elements/Restart cropped Png.png" id="9_12jt8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6s5h"]
+font = ExtResource("2_rwws5")
+font_size = 80
+font_color = Color(0.196078, 0.188235, 0.333333, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oaryt"]
+font = ExtResource("2_rwws5")
+font_size = 80
+font_color = Color(0.196078, 0.188235, 0.333333, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_k42uo")
+
+[node name="StartSurfing" type="Label" parent="."]
+offset_left = 289.0
+offset_top = 160.0
+offset_right = 863.0
+offset_bottom = 229.0
+scale = Vector2(1.00933, 0.989273)
+size_flags_horizontal = 4
+text = "start surfing!"
+label_settings = SubResource("LabelSettings_g6s5h")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DeadCounter" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="E1" type="TextureRect" parent="MarginContainer/DeadCounter"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_h2t75")
+stretch_mode = 3
+
+[node name="E2" type="TextureRect" parent="MarginContainer/DeadCounter"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_h2t75")
+stretch_mode = 3
+
+[node name="E3" type="TextureRect" parent="MarginContainer/DeadCounter"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_h2t75")
+stretch_mode = 3
+
+[node name="LifeCounter2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="L1" type="TextureRect" parent="MarginContainer/LifeCounter2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_qivfl")
+stretch_mode = 3
+
+[node name="L2" type="TextureRect" parent="MarginContainer/LifeCounter2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_qivfl")
+stretch_mode = 3
+
+[node name="L3" type="TextureRect" parent="MarginContainer/LifeCounter2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_qivfl")
+stretch_mode = 3
+
+[node name="ScoreContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="Score" type="Label" parent="MarginContainer/ScoreContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.196078, 0.188235, 0.333333, 1)
+theme_override_fonts/font = ExtResource("5_e5ubj")
+theme_override_font_sizes/font_size = 35
+text = "0 m"
+horizontal_alignment = 1
+
+[node name="Distance" type="Label" parent="MarginContainer/ScoreContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.196078, 0.188235, 0.333333, 1)
+theme_override_fonts/font = ExtResource("5_e5ubj")
+theme_override_font_sizes/font_size = 20
+text = "Distance Covered
+"
+horizontal_alignment = 1
+
+[node name="Empty Boost" type="HBoxContainer" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="EB1" type="TextureRect" parent="MarginContainer/Empty Boost"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_wltyb")
+stretch_mode = 2
+
+[node name="EB2" type="TextureRect" parent="MarginContainer/Empty Boost"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_wltyb")
+stretch_mode = 2
+
+[node name="EB3" type="TextureRect" parent="MarginContainer/Empty Boost"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_wltyb")
+stretch_mode = 2
+
+[node name="BoostContainer" type="HBoxContainer" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="B1" type="TextureRect" parent="MarginContainer/BoostContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_vjub0")
+stretch_mode = 2
+
+[node name="B2" type="TextureRect" parent="MarginContainer/BoostContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_vjub0")
+stretch_mode = 2
+
+[node name="B3" type="TextureRect" parent="MarginContainer/BoostContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_vjub0")
+stretch_mode = 2
+
+[node name="PressKey" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = 137.0
+offset_right = 225.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_6hl6b")
+stretch_mode = 2
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -180.0
+offset_right = 306.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.13999, 1.13999)
+size_flags_horizontal = 4
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_oaryt")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 160
+
+[node name="RestartMsg" type="TextureRect" parent="."]
+visible = false
+offset_left = 408.0
+offset_top = 416.0
+offset_right = 828.0
+offset_bottom = 524.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_12jt8")
+stretch_mode = 2

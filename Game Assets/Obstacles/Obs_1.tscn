@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://clnaxoqijaqdl"]
+
+[ext_resource type="Texture2D" uid="uid://bnsh4enh84yyc" path="res://assets/obstacles/Trees.png" id="1_ode2p"]
+
+[node name="obs 1" type="StaticBody2D" groups=["obstacles"]]
+z_index = 1
+scale = Vector2(0.1, 0.1)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_ode2p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1.73638, 114.286)
+scale = Vector2(5.28045, 4.31295)
+polygon = PackedVector2Array(-72.4383, 76.1215, -73.147, 133.523, 82.7585, 136.358, 80.2782, 78.2474, 2.32545, -2.53993)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbi1h7y8j1wg5"]
+
+[ext_resource type="Texture2D" uid="uid://dn2gqdwbuq1cy" path="res://assets/obstacles/TR1.png" id="1_lv4wd"]
+
+[node name="Obs 2" type="StaticBody2D" groups=["obstacles"]]
+z_index = 1
+scale = Vector2(0.07, 0.07)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("1_lv4wd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(8, 8)
+polygon = PackedVector2Array(-56.6964, 10.2679, -74.5536, 71.875, -75.8929, 118.75, 31.4807, 111.001, 54.9107, 45.9821, 16.0714, -21.875)

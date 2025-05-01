@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://unjr1dkrg8wo"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_1cl6r"]
+[ext_resource type="PackedScene" uid="uid://o18ewrxobok7" path="res://Game Assets/BG/Ground.tscn" id="1_74n7f"]
+[ext_resource type="PackedScene" uid="uid://bfk2utevfx625" path="res://Game Assets/Player/player.tscn" id="2_1ggjk"]
+[ext_resource type="PackedScene" uid="uid://da4fyoowettsm" path="res://Game Assets/HUD/Hud 1.tscn" id="4_rfig0"]
+[ext_resource type="PackedScene" uid="uid://dit2kxstiep7x" path="res://Game Assets/Powerups/boost_scene.tscn" id="5_lw3h7"]
+[ext_resource type="AudioStream" uid="uid://b110tylijecfc" path="res://assets/Chanthu Kudanjoru.mp3" id="6_m244w"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_1cl6r")
+rotation_angle = 800
+
+[node name="Ground" parent="." instance=ExtResource("1_74n7f")]
+position = Vector2(-8, 0)
+scale = Vector2(1.76, 1.48)
+
+[node name="Player" parent="." instance=ExtResource("2_1ggjk")]
+position = Vector2(520, 328)
+
+[node name="YetiSpawner" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(520, 376)
+
+[node name="HUD" parent="." instance=ExtResource("4_rfig0")]
+process_mode = 3
+
+[node name="ObstacleTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="BoostTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Boost" parent="." instance=ExtResource("5_lw3h7")]
+visible = false
+position = Vector2(528, 592)
+
+[node name="SpeedTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="BGmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_m244w")
+volume_db = 2.0
+
+[connection signal="boost_pickup" from="." to="HUD" method="update_boost"]
+[connection signal="dead" from="Player" to="." method="_on_player_dead"]
+[connection signal="double_tap" from="Player" to="." method="_on_player_double_tap"]
+[connection signal="lives_changed" from="Player" to="HUD" method="update_life"]
+[connection signal="timeout" from="YetiSpawner" to="." method="_on_yeti_spawner_timeout"]
+[connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
+[connection signal="timeout" from="BoostTimer" to="." method="_on_boost_timer_timeout"]
+[connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]

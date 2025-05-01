@@ -1,0 +1,183 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcjtwn1ycofff"]
+
+[ext_resource type="FontFile" uid="uid://pvxierg1gvcg" path="res://assets/hud_elements/upheavtt.ttf" id="1_yem0c"]
+[ext_resource type="Texture2D" uid="uid://cbu8w68vrmvop" path="res://assets/hud_elements/Heart Empty.png" id="2_sab3v"]
+[ext_resource type="Texture2D" uid="uid://c13408qtwlnhx" path="res://assets/hud_elements/Heart.png" id="3_00cyy"]
+[ext_resource type="FontFile" uid="uid://bf60dt1c31qxu" path="res://assets/hud_elements/VCRosdNEUE.ttf" id="4_xj3hp"]
+[ext_resource type="Texture2D" uid="uid://cvnfmf7l8s0re" path="res://assets/hud_elements/Boost Empty.png" id="5_i1aer"]
+[ext_resource type="Texture2D" uid="uid://peh2bdbhhc3n" path="res://assets/hud_elements/Boost_v2.png" id="6_mqfji"]
+[ext_resource type="Texture2D" uid="uid://cqmty1l8nirh3" path="res://assets/hud_elements/Restart cropped Png.png" id="7_jjwih"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wlesg"]
+font = ExtResource("1_yem0c")
+font_size = 80
+font_color = Color(0.196078, 0.188235, 0.333333, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="GAME OVER" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -180.0
+offset_right = 306.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.13999, 1.13999)
+size_flags_horizontal = 4
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_wlesg")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 160
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.196078, 0.188235, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_xj3hp")
+theme_override_font_sizes/font_size = 35
+text = "0 m"
+horizontal_alignment = 1
+
+[node name="Distance" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.196078, 0.188235, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_xj3hp")
+theme_override_font_sizes/font_size = 20
+text = "Distance Covered
+"
+horizontal_alignment = 1
+
+[node name="DeadCounter" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="E1" type="TextureRect" parent="MarginContainer/DeadCounter"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_sab3v")
+stretch_mode = 3
+
+[node name="E2" type="TextureRect" parent="MarginContainer/DeadCounter"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_sab3v")
+stretch_mode = 3
+
+[node name="E3" type="TextureRect" parent="MarginContainer/DeadCounter"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_sab3v")
+stretch_mode = 3
+
+[node name="LifeCounter2" type="HBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="L1" type="TextureRect" parent="MarginContainer/LifeCounter2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_00cyy")
+stretch_mode = 3
+
+[node name="L2" type="TextureRect" parent="MarginContainer/LifeCounter2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_00cyy")
+stretch_mode = 3
+
+[node name="L3" type="TextureRect" parent="MarginContainer/LifeCounter2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_00cyy")
+stretch_mode = 3
+
+[node name="Empty Boost" type="HBoxContainer" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="EB1" type="TextureRect" parent="MarginContainer/Empty Boost"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_i1aer")
+stretch_mode = 2
+
+[node name="EB2" type="TextureRect" parent="MarginContainer/Empty Boost"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_i1aer")
+stretch_mode = 2
+
+[node name="EB3" type="TextureRect" parent="MarginContainer/Empty Boost"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_i1aer")
+stretch_mode = 2
+
+[node name="Boost2" type="HBoxContainer" parent="MarginContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="B1" type="TextureRect" parent="MarginContainer/Boost2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_mqfji")
+stretch_mode = 2
+
+[node name="B2" type="TextureRect" parent="MarginContainer/Boost2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_mqfji")
+stretch_mode = 2
+
+[node name="B3" type="TextureRect" parent="MarginContainer/Boost2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_mqfji")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 408.0
+offset_top = 416.0
+offset_right = 828.0
+offset_bottom = 524.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_jjwih")
+stretch_mode = 2

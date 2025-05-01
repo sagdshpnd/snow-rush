@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://unjr1dkrg8wo"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_1cl6r"]
+[ext_resource type="PackedScene" uid="uid://o18ewrxobok7" path="res://Ground.tscn" id="1_74n7f"]
+[ext_resource type="PackedScene" uid="uid://bfk2utevfx625" path="res://player.tscn" id="2_1ggjk"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_1cl6r")
+
+[node name="Ground" parent="." instance=ExtResource("1_74n7f")]
+position = Vector2(-7.99998, 0)
+scale = Vector2(1.76, 1.48)
+
+[node name="Player" parent="." instance=ExtResource("2_1ggjk")]
+position = Vector2(520, 328)
